@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta property="og:description" content="An anime and manga search list built with Tailwind and Vue.">
+  <meta name="theme-color" content="#10b981">
+  <meta property="og:title" content="AniKo | Anime and Manga Search">
+  <meta property="og:image:url" content="<%= BASE_URL %>zigzag.svg">
+  <link rel="icon" href="<%= BASE_URL %>zigzag.svg">
+  <title>AniKo | Anime Search Engine</title>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136398330-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136398330-3');
+  </script>
+  <script src="https://kit.fontawesome.com/2f7fdbf371.js" crossorigin="anonymous"></script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="synxc" data-description="Support me on Buy me a coffee!" data-message="Thank you for visiting!"
+    data-color="#10b981" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+  <style>
+    html::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    html::-webkit-scrollbar-track {
+      background: #e2e8f0;
+    }
+
+    html::-webkit-scrollbar-thumb {
+      border-radius: 1px;
+      background-color: #10b981;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+</body>
+
+</html>
