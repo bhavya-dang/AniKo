@@ -1,10 +1,10 @@
 <template>
-  <div class="">
+  <div class="flex justify-center align-middle">
     <h1
-      class="hover:text-gray-900 inline-block text-3xl md:px-2 font-medium text-gray-800 tracking-wide"
+      class="mt-20 text-3xl md:px-2 bg-transparent font-medium shadow-md text-gray-800 tracking-wide"
     >
       <a
-        href="https://github.com/Sync-Codes/AniVue"
+        href="https://github.com/Sync-Codes/AniKo"
         target="_blank"
         rel="noopener noreferrer"
         >AniKo</a

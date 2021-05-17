@@ -9,6 +9,9 @@
 8) Hover states
 9) Shadow -->
   <div class="container">
+    <!-- <h1 class="mt-10 mb-10 text-3xl font-semibold filter drop-shadow-sm">
+      AniKo
+    </h1> -->
     <vue-progress-bar v-if="loading"></vue-progress-bar>
     <form
       class="w-auto md:w-full max-w-sm ml-20 py-5 md:mt-1"
@@ -33,23 +36,37 @@
         >
           Search
         </button>
-        <button
-          type="button"
-          class="ease-in-out transition-all duration-150 focus:outline-none flex-shrink-0 border-2 border-gray-800 hover:bg-gray-800 text-gray-800 hover:text-white text-sm py-1 px-2 rounded-lg font-semibold tracking-widest"
-        >
-          <a
-            href="https://github.com/Sync-Codes"
-            target="_blank"
-            rel="noopener noreferrer"
+        <a
+          href="https://github.com/Sync-Codes"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex justify-items-center align-middle"
+          ><button
+            type="button"
+            class="ease-in-out transition-all duration-150 focus:outline-none flex-shrink-0 border-2 border-gray-800 hover:bg-gray-800 text-gray-800 hover:text-white text-sm py-1 px-2 rounded-lg font-semibold tracking-widest"
           >
             <i class="fab fa-github"></i>
-            Github</a
-          >
-        </button>
+            Github
+          </button></a
+        >
       </div>
     </form>
-    <!-- header and link  -->
+    <!-- card comp  -->
     <div v-if="loading === false">
+      <div v-if="totalResults === 0">
+        <div class="hidden justify-items-start mx-10">
+          <h1 class="text-xl font-semibold mb-1 py-2 filter drop-shadow-sm">
+            Total Results: {{ totalResults }}
+          </h1>
+        </div>
+      </div>
+      <div v-else>
+        <div class="flex justify-items-start justify-start mx-10">
+          <h1 class="text-xl font-semibold mb-1 py-2 filter drop-shadow-lg">
+            Total Results: {{ totalResults }}
+          </h1>
+        </div>
+      </div>
       <Card class="mt-10" :animes="anime"></Card>
     </div>
   </div>
@@ -179,7 +196,7 @@ export default {
         return a.isAdult === false;
       });
       // console.log(this.anime);
-      result.data.data.Page.media.forEach((e) => {
+      this.anime.forEach((e) => {
         if (e.type === "ANIME") {
           this.animeCount++;
         } else if (e.type === "MANGA") {
@@ -188,13 +205,14 @@ export default {
       });
     },
     handleErrors: function(err) {
-      if (err.response.status === "404") {
-        return this.$toasted.show("No results. Try again!", {
-          theme: "outline",
-          icon: "exclamation-triangle",
-          duration: 4000,
-        });
-      }
+      console.log(err.message);
+      // if (err.response.status === "404") {
+      //   return this.$toasted.show("No results. Try again!", {
+      //     theme: "outline",
+      //     icon: "exclamation-triangle",
+      //     duration: 4000,
+      //   });
+      // }
     },
   },
 };

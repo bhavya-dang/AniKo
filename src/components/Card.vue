@@ -197,9 +197,7 @@
 export default {
   name: "Card",
   props: {
-    animes: Array,
-    // color: String,
-    // bg_color: String,
+    animes: Array
   },
   data() {
     return {

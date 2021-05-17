@@ -12,6 +12,9 @@ module.exports = {
           light: "#40DCA5",
         },
       },
+      padding: {
+        "2/3": "66.66667%",
+      },
     },
     flex: {
       new: "1 0 auto",
@@ -22,5 +25,5 @@ module.exports = {
       animation: ["motion-safe"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };

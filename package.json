@@ -11,6 +11,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0",
     "@vue/cli": "^4.5.13",
     "autoprefixer": "^9.8.6",
     "axios": "^0.19.2",

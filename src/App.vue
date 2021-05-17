@@ -2,22 +2,27 @@
   <div id="app">
     <!-- <Header></Header> -->
     <Search></Search>
+    <TrendingAnime></TrendingAnime>
+    <TrendingManga></TrendingManga>
     <Footer id="footer"></Footer>
   </div>
 </template>
 
 <script>
 import "@/assets/css/tailwind.css";
+import TrendingAnime from "@/components/TrendingAnime";
+import TrendingManga from "@/components/TrendingManga";
 // import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
 export default {
   name: "App",
   components: {
+    TrendingAnime,
+    TrendingManga,
     // Header,
     Search,
     Footer,
-    // Loader
   },
 };
 </script>
@@ -42,7 +47,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 1px;
+  border-radius: 5px;
   background-color: #10b981;
 }
 
