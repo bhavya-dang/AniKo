@@ -46,8 +46,7 @@
 </template>
 
 <script>
-import axios from "axios";
-
+import GetData from "../services/GetData";
 export default {
   name: "trendingManga",
   data() {
@@ -87,22 +86,11 @@ export default {
       perPage: 5,
     };
 
-    const headers = {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    };
-
-    let result = await axios({
-      url: "https://graphql.anilist.co",
-      method: "post",
-      data: {
-        query,
-        variables,
-      },
-      headers,
+    const result = await GetData.getTitles({
+      query,
+      variables,
     }).catch((err) => this.handleErrors(err));
     this.trendingManga = result.data.data.Page.media;
-    // console.log(this.trendingManga);
   },
   methods: {
     handleErrors: function(err) {

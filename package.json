@@ -1,5 +1,5 @@
 {
-  "name": "vue-tailwind-anime",
+  "name": "aniko",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,8 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "css": "postcss src/assets/css/tailwind.css -o src/assets/css/styles.css",
-    "start": "node server.js",
-    "deploy": "firebase deploy"
+    "start": "node server.js"
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.0",

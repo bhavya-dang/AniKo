@@ -5,20 +5,7 @@ module.exports = {
     content: ["./src/**/*.vue", "./public/**/*.html"],
   },
   theme: {
-    extend: {
-      colors: {
-        rose: colors.rose,
-        green: {
-          light: "#40DCA5",
-        },
-      },
-      padding: {
-        "2/3": "66.66667%",
-      },
-    },
-    flex: {
-      new: "1 0 auto",
-    },
+    extend: {},
   },
   variants: {
     extend: {

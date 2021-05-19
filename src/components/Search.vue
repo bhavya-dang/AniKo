@@ -37,7 +37,7 @@
           Search
         </button>
         <a
-          href="https://github.com/Sync-Codes"
+          href="https://github.com/Sync-Codes/AniKo"
           target="_blank"
           rel="noopener noreferrer"
           class="flex justify-items-center align-middle"
@@ -73,9 +73,10 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 import "@/assets/css/tailwind.css";
 import Card from "@/components/Card";
+import GetData from "../services/GetData";
 
 export default {
   name: "Search",
@@ -126,7 +127,7 @@ export default {
                 month
                 day
               }
-              studios {
+              studios(isMain: true) {
                 nodes {
                   name
                 }
@@ -160,19 +161,14 @@ export default {
         perPage: 100,
       };
 
-      const headers = {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      };
+      // const headers = {
+      //   "Content-Type": "application/json",
+      //   Accept: "application/json",
+      // };
 
-      const result = await axios({
-        url: "https://graphql.anilist.co",
-        method: "post",
-        data: {
-          query,
-          variables,
-        },
-        headers,
+      const result = await GetData.getTitles({
+        query,
+        variables,
       }).catch((err) => this.handleErrors(err));
       setTimeout(() => {
         this.$Progress.finish();
@@ -198,6 +194,7 @@ export default {
       // console.log(this.anime);
       this.anime.forEach((e) => {
         if (e.type === "ANIME") {
+          console.log(e.title.romaji, e.studios.nodes[0].name);
           this.animeCount++;
         } else if (e.type === "MANGA") {
           this.mangaCount++;

@@ -11,6 +11,17 @@
           :src="d.coverImage.large"
           alt=""
         />
+        <!-- <div v-if="d.type === 'ANIME'" class="absolute bottom-0 left-0">
+          <span
+            :style="{ color: d.coverImage.color }"
+            class="p-2 bg-gray-900 bg-opacity-20"
+            >{{
+              d.studios.nodes[0] === undefined
+                ? "Not Specified"
+                : d.studios.nodes[0].name
+            }}</span
+          >
+        </div> -->
         <div
           class="flex-1 border border-l-0 rounded-b p-4 flex flex-row justify-between leading-normal w-full"
         >
@@ -197,7 +208,7 @@
 export default {
   name: "Card",
   props: {
-    animes: Array
+    animes: Array,
   },
   data() {
     return {
