@@ -2,7 +2,7 @@
   <div>
     <div class="flex justify-items-start mx-10">
       <h1 class="text-xl font-semibold mb-3 py-2 filter drop-shadow-sm">
-        <i class="fas fa-fire"></i> Trending
+        <i class="text-red-600 fas fa-fire"></i> Trending
         <span
           class="text-xl font-semibold text-green-500 filter drop-shadow-sm tracking-wide"
           >Anime</span

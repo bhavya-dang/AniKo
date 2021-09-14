@@ -52,6 +52,7 @@
         >
       </div>
     </form>
+    <!-- <span><i class="w-full h-full fas fa-adjust"></i></span> -->
     <!-- <h1 class="text-gray-800 font-semibold tracking-wide text-right">
       <a
         href="https://github.com/Sync-Codes/AniKo"
