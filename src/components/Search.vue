@@ -7,7 +7,8 @@
 6) Hover Popups / card hover popup
 7) Header component 
 8) Hover states
-9) Shadow -->
+9) Shadow 
+10) Scroll to top button -->
   <div class="container">
     <!-- <h1 class="mt-10 mb-10 text-3xl font-semibold filter drop-shadow-sm">
       AniKo
@@ -51,6 +52,14 @@
         >
       </div>
     </form>
+    <!-- <h1 class="text-gray-800 font-semibold tracking-wide text-right">
+      <a
+        href="https://github.com/Sync-Codes/AniKo"
+        target="_blank"
+        rel="noopener noreferrer"
+        >AniKo</a
+      >
+    </h1> -->
     <!-- card comp  -->
     <div v-if="loading === false">
       <div v-if="totalResults === 0">

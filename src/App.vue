@@ -39,7 +39,12 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4.5px;
+}
+
+::-webkit-scrollbar:hover {
+  width: 5.5px;
+  transition: width ease;
 }
 
 ::-webkit-scrollbar-track {
