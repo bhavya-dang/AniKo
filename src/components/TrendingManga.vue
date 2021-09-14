@@ -32,10 +32,14 @@
       class="mx-10 flex flex-wrap justify-items-start justify-between align-middle space-y-1"
     >
       <!-- grid grid-cols-3 gap-5 h-80 w-80 -->
-      <div v-for="(t, i) in trendingManga" :key="i" class="mb-3">
+      <div
+        v-for="(t, i) in trendingManga"
+        :key="i"
+        class="transform hover:scale-105 transition ease-in-out duration-500"
+      >
         <a :href="t.siteUrl" target="_blank" rel="noopener noreferrer">
           <img
-            class="h-full w-full object-cover object-top rounded-md shadow-lg transform hover:scale-105 transition ease-in-out duration-500"
+            class="h-full w-full object-cover object-top rounded-md shadow-lg"
             :src="t.coverImage.large"
             :alt="t.title.english === null ? t.title.romaji : t.title.english"
           />
