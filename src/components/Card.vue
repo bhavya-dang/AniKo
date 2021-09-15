@@ -29,7 +29,7 @@
             <div class="text-gray-900 font-medium text-xl mb-2">
               <a
                 :href="d.siteUrl"
-                class=" hover:text-gray-800"
+                class=" hover:text-gray-700"
                 target="_blank"
                 rel="noopener noreferrer"
                 >{{

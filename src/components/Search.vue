@@ -2,12 +2,9 @@
   <!-- TODO -->
   <!-- 1) Advanced Filter
 2) Grid List Toggle
-3) Genre Badges
 5) Card Revamp
-6) Hover Popups / card hover popup
+6) Hover Popups / card hover popup: title
 7) Header component 
-8) Hover states
-9) Shadow 
 10) Scroll to top button -->
   <div class="container">
     <!-- <h1 class="mt-10 mb-10 text-3xl font-semibold filter drop-shadow-sm">
