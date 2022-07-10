@@ -1,5 +1,4 @@
-
-<template>
+<!-- <template>
 
 <div>
     <p>isDark: {{ isDark }}</p>
@@ -20,4 +19,4 @@ import { useDark, useToggle } from "@vueuse/core";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-</script>
+</script> -->

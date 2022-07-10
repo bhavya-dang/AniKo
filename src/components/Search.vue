@@ -34,7 +34,7 @@
         >
           Search
         </button>
-        <a
+        <!-- <a
           href="https://github.com/Sync-Codes/AniKo"
           target="_blank"
           rel="noopener noreferrer"
@@ -46,8 +46,17 @@
             <i class="fab fa-github"></i>
             Github
           </button></a
-        >
-        
+        > -->
+            <p>isDark: {{ isDark }}</p>
+    <button
+    type="button"
+    id="toggleModeBtn"
+    @click="toggleDark()"
+    class="ease-in-out transition-all duration-150 focus:outline-none flex-shrink-0 border-2 border-gray-800 hover:bg-gray-800 text-gray-800 hover:text-white text-sm py-1 px-2 rounded-lg font-semibold tracking-widest"
+    >
+    <i class="fa-solid fa-moon-over-sun"></i>
+    Light/Dark
+    </button>
       </div>
     </form>
     <!-- <span><i class="w-full h-full fas fa-adjust"></i></span> -->
@@ -84,6 +93,8 @@
 // import axios from "axios";
 import "@/assets/css/tailwind.css";
 import Card from "@/components/Card";
+import { useDark, useToggle } from "@vueuse/core";
+import { async } from "q";
 import GetData from "../services/GetData";
 
 export default {
@@ -100,9 +111,14 @@ export default {
       animeCount: 0,
       mangaCount: 0,
       totalResults: 0,
+      isDark: useDark()
+      // toggleDark: useToggle(isDark)
     };
   },
   methods: {
+    toggleDark: async function() {
+      useToggle(this.isDark)
+    },
     getAnime: async function() {
       this.loading = true;
       this.$Progress.start();
