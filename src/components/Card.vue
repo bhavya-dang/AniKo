@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col">
-    <div class="flex-grow container">
+  <div class="dark flex flex-col">
+    <div class="dark:bg-gray-900 grow container">
       <div
-        class="flex-col md:flex-row xl:flex-row lg:flex-row flex rounded-lg flex-no-wrap mt-7 md:mb-10 mx-8 my-4 md:-my-8 shadow-md flex-basis-0 md:w-full w-full max-w-full bg-white items-stretch"
+        class="bg-white dark:bg-zinc-800 flex-col md:flex-row xl:flex-row lg:flex-row flex rounded-lg flex-no-wrap mt-7 md:mb-10 mx-8 my-4 md:-my-8 shadow-lg flex-basis-0 items-stretch"
         v-for="(d, i) in animes"
         :key="i"
       >
@@ -46,7 +46,8 @@
               No Description Provided.
             </p>
             <p v-else class="text-gray-600 font-normal">
-              {{ d.description.replace(regex, "") }}
+              <!-- {{ d.description.replace(regex, "") }} -->
+              {{ d.description.substring(0, 300) + "..." }}
             </p>
             <div class="flex flex-wrap flex-col mt-3">
               <div v-if="!d.averageScore">
@@ -133,12 +134,15 @@
                   >Manga</span
                 >
               </p>
-              <div v-if="d.startDate.year !== null">
+              <div v-if="d.startDate.year !== null && d.endDate.year !== null">
                 <p class="block py-1 text-sm font-semibold text-gray-800">
-                  Start Date:
+                  Aired:
                   <span class="inline text-sm font-semibold text-gray-600">{{
                     moment(
-                      `${d.startDate.day}.${d.startDate.month}.${d.startDate.year}`,
+                        `${d.startDate.day}.${d.startDate.month}.${d.startDate.year}`,
+                        "DD.MM.YYYY"
+                      ).format("MMM Do, YYYY")}} - {{ moment(
+                      `${d.endDate.day}.${d.endDate.month}.${d.endDate.year}`,
                       "DD.MM.YYYY"
                     ).format("MMM Do, YYYY")
                   }}</span>
@@ -146,18 +150,21 @@
               </div>
               <div v-else>
                 <p class="hidden py-1 text-sm font-semibold text-gray-800">
-                  Start Date:
+                  Aired:
                   <span class="inline text-sm font-semibold text-gray-600">
                     {{
                       moment(
                         `${d.startDate.day}.${d.startDate.month}.${d.startDate.year}`,
                         "DD.MM.YYYY"
-                      ).format("MMM Do, YYYY")
+                      ).format("MMM Do, YYYY") }} - {{ moment(
+                      `${d.endDate.day}.${d.endDate.month}.${d.endDate.year}`,
+                      "DD.MM.YYYY"
+                    ).format("MMM Do, YYYY")
                     }}
                   </span>
                 </p>
               </div>
-              <div v-if="d.endDate.year !== null">
+              <!-- <div v-if="d.endDate.year !== null">
                 <p class="block py-1 text-sm font-semibold text-gray-800">
                   End Date:
                   <span class="inline text-sm font-semibold text-gray-600">{{
@@ -178,7 +185,7 @@
                     ).format("MMM Do, YYYY")
                   }}</span>
                 </p>
-              </div>
+              </div> -->
               <div class="flex items-center align-middle space-x-2 mt-1">
                 <p v-for="(g, i) in d.genres" :key="i" class="cursor-pointer">
                   <span

@@ -1,4 +1,5 @@
 import Vue from "vue";
+// import { ref } from "vue";
 import App from "./App.vue";
 import axios from "axios";
 import "@/assets/css/tailwind.css";
@@ -9,6 +10,7 @@ import moment from "moment";
 Vue.config.productionTip = true;
 const options = {
   color: "#10b981",
+  backgroundColor: "rgb(55 65 81)",
   failedColor: "red",
   thickness: "4.4px",
   transition: {

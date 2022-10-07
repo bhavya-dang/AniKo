@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="flex justify-items-start mx-10 mt-20">
-      <h1 class="text-xl font-semibold mb-3 py-2 filter drop-shadow-sm">
+      <h1 class="dark:text-white text-xl font-semibold mb-3 py-2 filter drop-shadow-sm">
         <i class="text-red-600 fas fa-fire"></i> Trending
         <span
-          class="text-xl font-bold text-green-500 filter drop-shadow-sm tracking-wide"
+          class="text-xl font-semibold text-green-500 filter drop-shadow-sm tracking-wide"
           >Manga</span
         >
       </h1>
@@ -24,7 +24,7 @@
             :src="t.coverImage.large"
             :alt="t.title.english === null ? t.title.romaji : t.title.english"
           />
-          <p class="text-gray-600 mt-1 text-center font-medium">
+          <p class="text-gray-600 dark:text-gray-300 mt-1 text-center font-medium">
             {{ t.title.english === null ? t.title.romaji : t.title.english }}
           </p>
         </a>

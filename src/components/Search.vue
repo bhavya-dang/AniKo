@@ -10,7 +10,8 @@
     <!-- <h1 class="mt-10 mb-10 text-3xl font-semibold filter drop-shadow-sm">
       AniKo
     </h1> -->
-    <vue-progress-bar v-if="loading"></vue-progress-bar>
+      <vue-progress-bar v-if="loading" class="dark:bg-gray-900"></vue-progress-bar>
+      <!-- <vue-progress-bar v-else class="hidden"></vue-progress-bar> -->
     <form
       class="w-auto md:w-full max-w-sm ml-20 py-5 md:mt-1"
       v-on:submit.prevent
@@ -20,7 +21,7 @@
           id="input"
           v-on:keyup.enter="getAnime"
           v-model="query"
-          class="bg-white focus:placeholder-gray-800 rounded-lg shadow-sm w-full p-2 mr-3 focus:outline-none tracking-wide focus:ring-1 focus:ring-green-500 active:bg-white"
+          class="grow bg-white focus:placeholder-gray-800 rounded-lg shadow-sm max-w-full p-2 mr-3 focus:outline-none border-gray-200 tracking-wide focus:ring-1 focus:ring-green-500 active:bg-white"
           type="text"
           placeholder="Search Anime/Manga"
           aria-label="query"
@@ -41,35 +42,27 @@
           class="flex justify-items-center align-middle"
           ><button
             type="button"
-            class="ease-in-out transition-all duration-150 focus:outline-none flex-shrink-0 border-2 border-gray-800 hover:bg-gray-800 text-gray-800 hover:text-white text-sm py-1 px-2 rounded-lg font-semibold tracking-widest"
+            class="ghBtn ease-in-out transition-all duration-150 focus:outline-none flex-shrink-0 border-2 border-gray-800 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-gray-800 hover:bg-gray-800 text-gray-800 hover:text-white text-sm py-1 px-2 rounded-lg font-semibold tracking-widest"
           >
-            <i class="fab fa-github"></i>
+            <!-- <i class="dark:text-white dark:hover:text-gray-800 fab fa-github"></i> -->
+            <i class="dark:text-white dark:hover:text-gray-800 fab fa-github"></i>
             Github
-          </button></a
-        >
+          </button></a>
       </div>
     </form>
-    <!-- <span><i class="w-full h-full fas fa-adjust"></i></span> -->
-    <!-- <h1 class="text-gray-800 font-semibold tracking-wide text-right">
-      <a
-        href="https://github.com/Sync-Codes/AniKo"
-        target="_blank"
-        rel="noopener noreferrer"
-        >AniKo</a
-      >
-    </h1> -->
+
     <!-- card comp  -->
     <div v-if="loading === false">
       <div v-if="totalResults === 0">
         <div class="hidden justify-items-start mx-10">
-          <h1 class="text-xl font-semibold mb-1 py-2 filter drop-shadow-sm">
+          <h1 class="dark:text-white text-xl font-semibold mb-1 py-2 filter drop-shadow-sm">
             Total Results: {{ totalResults }}
           </h1>
         </div>
       </div>
       <div v-else>
         <div class="flex justify-items-start justify-start mx-10">
-          <h1 class="text-xl font-semibold mb-1 py-2 filter drop-shadow-lg">
+          <h1 class="dark:text-white text-xl font-semibold mb-1 py-2 filter drop-shadow-lg">
             Total Results: {{ totalResults }}
           </h1>
         </div>
@@ -99,9 +92,15 @@ export default {
       animeCount: 0,
       mangaCount: 0,
       totalResults: 0,
+      isDark: true
     };
   },
   methods: {
+    toggleDark: async function() {
+      this.isDark = !this.isDark;
+      this.$emit("update:parent", this.isDark);
+    },
+
     getAnime: async function() {
       this.loading = true;
       this.$Progress.start();
@@ -227,4 +226,10 @@ export default {
 button {
   font-family: Raleway, Helvetica;
 }
+
+.ghBtn:hover i {
+  color: rgb(55 65 81);
+  transition: ease-in-out;
+}
+
 </style>

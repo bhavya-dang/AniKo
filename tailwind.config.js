@@ -1,19 +1,13 @@
-const colors = require("tailwindcss/colors");
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ["./src/**/*.vue", "./public/**/*.html"],
-  },
+  content: [
+    // Example content paths...
+    './public/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
+  darkMode: "class",
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {
-      animation: ["motion-safe"],
-    },
-  },
-  plugins: [
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/line-clamp"),
-  ],
-};
+  plugins: [],
+}

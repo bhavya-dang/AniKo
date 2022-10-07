@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="footer" class="mt-3 p-4 text-center flex-none">
-      <h3 class="text-base font-medium tracking-normal text-gray-900">
+      <h3 class="text-base font-medium tracking-normal text-gray-900 dark:text-white">
         Developed and maintained with ❤️ by
         <span
           ><a
