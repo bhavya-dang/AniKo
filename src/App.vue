@@ -2,6 +2,7 @@
   <div id="app">
     <!-- <Header></Header> -->
     <Search></Search>
+    <!-- <Toggle></Toggle> -->
     <TrendingAnime></TrendingAnime>
     <TrendingManga></TrendingManga>
     <Footer id="footer"></Footer>
@@ -15,15 +16,17 @@ import TrendingManga from "@/components/TrendingManga";
 // import Header from "@/components/Header";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
+
 export default {
   name: "App",
   components: {
     TrendingAnime,
     TrendingManga,
+    // Toggle,
     // Header,
     Search,
-    Footer,
-  },
+    Footer
+},
 };
 </script>
 
